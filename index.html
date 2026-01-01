@@ -2,87 +2,91 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Clique Rápido</title>
+<title>Simulador Exército Brasileiro</title>
 
 <style>
     body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #1e3c72, #2a5298);
-        color: white;
-        text-align: center;
         margin: 0;
-        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0b3d1f;
+        color: #fff;
     }
 
-    h1 {
-        margin-top: 40px;
+    header {
+        background: #072914;
+        padding: 20px;
+        text-align: center;
     }
 
-    #game {
-        margin-top: 50px;
+    section {
+        padding: 30px;
+        max-width: 900px;
+        margin: auto;
     }
 
-    button {
-        padding: 20px 40px;
-        font-size: 20px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        background: #00ff88;
+    h1, h2 {
+        color: #f4d03f;
+    }
+
+    .botao {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 15px 25px;
+        background: #f4d03f;
         color: #000;
-        transition: transform 0.1s;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
     }
 
-    button:active {
-        transform: scale(0.95);
-    }
-
-    .info {
-        font-size: 22px;
-        margin: 20px;
+    footer {
+        background: #072914;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
     }
 </style>
 </head>
 
 <body>
 
-<h1>🎮 Clique Rápido</h1>
-<p>Clique o máximo que conseguir em 10 segundos!</p>
+<header>
+    <h1>🪖 Simulador Exército Brasileiro</h1>
+    <p>Disciplina, hierarquia e realismo</p>
+</header>
 
-<div id="game">
-    <div class="info">⏱ Tempo: <span id="tempo">10</span></div>
-    <div class="info">🔥 Pontos: <span id="pontos">0</span></div>
-    <button id="botao">CLICAR!</button>
-</div>
+<section>
+    <h2>📜 Sobre o Projeto</h2>
+    <p>
+        O Simulador do Exército Brasileiro é um projeto no Discord focado em
+        hierarquia, treinamentos, patentes e organização militar.
+    </p>
+</section>
 
-<script>
-    let pontos = 0;
-    let tempo = 10;
-    let jogoAtivo = true;
+<section>
+    <h2>🎖️ Patentes</h2>
+    <p>
+        Soldado, Cabo, Sargento, Tenente, Capitão, Major, Coronel.
+    </p>
+</section>
 
-    const btn = document.getElementById("botao");
-    const pontosTxt = document.getElementById("pontos");
-    const tempoTxt = document.getElementById("tempo");
+<section>
+    <h2>📖 Regras</h2>
+    <p>
+        Respeito, disciplina, cumprimento de ordens e boa conduta são obrigatórios.
+    </p>
+</section>
 
-    btn.onclick = () => {
-        if (!jogoAtivo) return;
-        pontos++;
-        pontosTxt.textContent = pontos;
-    };
+<section>
+    <h2>🔗 Entrar no Discord</h2>
+    <a class="botao" href="https://discord.gg/5xP7TD2z" target="_blank">
+        Entrar no Servidor
+    </a>
+</section>
 
-    const contador = setInterval(() => {
-        tempo--;
-        tempoTxt.textContent = tempo;
-
-        if (tempo <= 0) {
-            clearInterval(contador);
-            jogoAtivo = false;
-            btn.disabled = true;
-            btn.textContent = "FIM!";
-            alert("⏱ Tempo acabou!\nPontuação: " + pontos);
-        }
-    }, 1000);
-</script>
+<footer>
+    <p>© Simulador Exército Brasileiro</p>
+</footer>
 
 </body>
 </html>
